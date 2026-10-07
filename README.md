@@ -88,3 +88,50 @@ Algorithm:
 6. Initialize graduation Date
 7. Convert credits to integer
 ``
+
+## Mermaid 
+```
+classDiagram
+ 
+class Address {
+- string street
+- string city
+- string state
+- string zip
+ 
++ Address()
++ Address(string street, string city, string state, string zip)
++ void init(string street, string city, string state, string zip)
++ void printAddress()
+}
+ 
+class Date {
+- int month
+- int day
+- int year
+ 
++ Date()
++ Date(string dateString)
++ void init(string dateString)
++ string getMonthName()
++ void printDate()
+}
+ 
+class Student {
+- string firstName
+- string lastName
+- Address address
+- Date birthDate
+- Date gradDate
+- int creditHours
+ 
++ Student()
++ void init(string csvLine)
++ string getLastFirst()
++ void printStudent()
+}
+ 
+Student *-- Address
+Student *-- Date : birthDate
+Student *-- Date : gradDate
+```
